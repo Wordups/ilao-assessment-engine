@@ -1,0 +1,283 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --bg: #f4efe5;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-strong: #ffffff;
+  --ink: #10261d;
+  --muted: #47695c;
+  --accent: #0f766e;
+  --accent-dark: #134e4a;
+  --sand: #d8c2a8;
+  --border: rgba(16, 38, 29, 0.1);
+  --shadow: 0 24px 60px rgba(16, 38, 29, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.14), transparent 30%),
+    linear-gradient(135deg, #f4efe5 0%, #e8ddcd 45%, #f7f1ea 100%);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  margin-top: 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.app-shell {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.hero-panel,
+.auth-card,
+.wizard-shell,
+.summary-layout,
+.status-banner {
+  backdrop-filter: blur(16px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 28px;
+}
+
+.hero-panel {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.hero-panel h1 {
+  margin: 0.5rem 0 0.75rem;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1;
+}
+
+.hero-copy {
+  max-width: 60ch;
+  color: var(--muted);
+}
+
+.hero-stats {
+  display: grid;
+  gap: 1rem;
+}
+
+.hero-stats div,
+.summary-card,
+.assessment-card,
+.item-card,
+.detail-panel {
+  background: var(--surface-strong);
+  border-radius: 22px;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+}
+
+.hero-stats strong {
+  display: block;
+  font-size: 1.6rem;
+}
+
+.hero-stats span {
+  color: var(--muted);
+}
+
+.auth-card,
+.wizard-shell,
+.summary-layout,
+.status-banner,
+.detail-panel {
+  margin-top: 1.25rem;
+  padding: 1.5rem;
+}
+
+.auth-card {
+  max-width: 480px;
+}
+
+.status-banner {
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.wizard-steps,
+.wizard-actions,
+.section-header,
+.card-topline,
+.card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.wizard-steps {
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.step-pill,
+.ghost-button,
+.primary-button,
+.status-chip,
+.opportunity-chip {
+  border-radius: 999px;
+}
+
+.step-pill,
+.ghost-button {
+  background: rgba(16, 38, 29, 0.06);
+  color: var(--ink);
+  padding: 0.8rem 1.1rem;
+}
+
+.step-pill.active,
+.primary-button,
+.status-chip {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: white;
+}
+
+.primary-button {
+  padding: 0.9rem 1.2rem;
+}
+
+.panel-grid,
+.review-grid,
+.item-grid,
+.assessment-grid,
+.detail-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.panel-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.review-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.item-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.section-editor,
+.item-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.assessment-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 1rem;
+}
+
+.detail-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.opportunity-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.opportunity-chip {
+  padding: 0.45rem 0.75rem;
+  background: rgba(15, 118, 110, 0.12);
+  color: var(--accent-dark);
+}
+
+.status-chip {
+  padding: 0.35rem 0.75rem;
+  text-transform: capitalize;
+}
+
+.assessment-card.selected,
+.detail-panel {
+  border-color: rgba(15, 118, 110, 0.35);
+  box-shadow: 0 18px 40px rgba(15, 118, 110, 0.12);
+}
+
+.detail-meta {
+  color: var(--muted);
+  margin-top: -0.25rem;
+}
+
+.detail-panel ul {
+  margin-bottom: 0;
+}
+
+.error-text {
+  color: #b91c1c;
+}
+
+ul {
+  padding-left: 1.1rem;
+}
+
+@media (max-width: 900px) {
+  .hero-panel,
+  .panel-grid,
+  .review-grid,
+  .item-grid,
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wizard-actions,
+  .section-header,
+  .card-topline,
+  .card-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

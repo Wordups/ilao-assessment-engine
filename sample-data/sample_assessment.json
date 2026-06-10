@@ -1,0 +1,64 @@
+{
+  "title": "Client Intake Workflow Review",
+  "organization_name": "Example Operations Team",
+  "sector": "Shared Services",
+  "respondent_name": "Alex Morgan",
+  "respondent_email": "alex.morgan@example.com",
+  "status": "draft",
+  "input_section": {
+    "description": "New client requests are collected through email, web forms, and phone notes.",
+    "dependencies": ["Shared inbox", "Phone intake log"],
+    "tools": ["Microsoft Forms", "Outlook"],
+    "items": [
+      {
+        "name": "Collect intake details",
+        "current_state": "manual",
+        "pain_level": 4,
+        "risk_level": "medium",
+        "notes": "Staff retype notes into the case tracker."
+      }
+    ]
+  },
+  "logic_section": {
+    "description": "Supervisors review eligibility and routing rules.",
+    "dependencies": ["Eligibility matrix", "Regional routing rules"],
+    "tools": ["Excel"],
+    "items": [
+      {
+        "name": "Determine case eligibility",
+        "current_state": "manual",
+        "pain_level": 5,
+        "risk_level": "high",
+        "notes": "Decision logic changes monthly and is tracked in spreadsheets."
+      }
+    ]
+  },
+  "automation_section": {
+    "description": "A small number of templated email steps exist, but there is no system integration.",
+    "dependencies": ["Email templates"],
+    "tools": ["Outlook"],
+    "items": [
+      {
+        "name": "Notify assigned team",
+        "current_state": "semi-automated",
+        "pain_level": 3,
+        "risk_level": "medium",
+        "notes": "Needs integration with the case management platform."
+      }
+    ]
+  },
+  "output_section": {
+    "description": "Leadership reporting is compiled manually every Friday.",
+    "dependencies": ["Case tracker exports"],
+    "tools": ["Excel", "PowerPoint"],
+    "items": [
+      {
+        "name": "Prepare weekly operations report",
+        "current_state": "manual",
+        "pain_level": 4,
+        "risk_level": "medium",
+        "notes": "Formatting and data cleanup are repeated each week."
+      }
+    ]
+  }
+}
